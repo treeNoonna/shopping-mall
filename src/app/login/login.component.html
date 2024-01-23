@@ -1,1 +1,28 @@
-login
+<h1>Login</h1>
+
+<!--input이 하나라도 있으면 formGroup에 넣음 / 아니면 formControl-->
+<form [formGroup]="loginFormGroup" (ngSubmit)="submit($event)">
+  <label for="email">E-mail : </label>
+  <input id="email" type="text" formControlName="email"><br>
+
+  <label for="password">password :</label>
+  <input id="password" type="password" formControlName="password">
+
+
+  <button id="submit" type="submit">SUBMIT</button>
+
+</form>
+
+<!--
+<input type="text" [formControl]="copy">
+ -->
+ <form [formGroup]="formGroup">
+  <div formArrayName="inputs">
+    <div *ngFor="let input of inputs.controls; let i = index">
+      <input [formControlName]="i" type="text">
+    </div>
+  </div>
+</form>
+
+<button (click)="addInput()">Add</button>
+
