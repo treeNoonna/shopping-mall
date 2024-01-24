@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit{
   inputs! : FormArray;
 
   ngOnInit(): void {
-    /* this.loginFormGroup = new FormGroup({
+   this.loginFormGroup = new FormGroup({
       email: new FormControl('',{validators: [Validators.required, Validators.email]}),
       password: new FormControl('',{validators : [Validators.required]})
     });
@@ -42,34 +42,22 @@ export class LoginComponent implements OnInit{
     ).subscribe();
 
 
-  this.copy.valueChanges.pipe(
-    debounceTime(200),
-    tap(value => {
-      this.loginFormGroup?.get('email')?.setValue(value);
-    })
-  ).subscribe(); */
-
   this.formGroup = new FormGroup({
     inputs: this.fb.array([])
   });
 
 }
 
-addInput(): void {
-  this.inputs = this.formGroup.get('inputs') as FormArray;
-  this.inputs.push(new FormControl(''));
-  console.log(this.formGroup);
-}
-
-
 
 get emailControl() { return this.loginFormGroup.get('email');}
+get passwordControl() { return this.loginFormGroup.get('email');}
+
 
   submit(e:any){
     //console.log(this.loginFormGroup);
 
     if(this.loginFormGroup.valid){
-      this.userService.setUser(this.emailControl?.value);
+      this.userService.setUser(this.emailControl?.value, this.passwordControl?.value);
       this.router.navigateByUrl('/main');
     }
   }

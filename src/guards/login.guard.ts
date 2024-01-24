@@ -1,6 +1,6 @@
 import { inject } from "@angular/core";
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivateFn, ResolveFn, Router, RouterStateSnapshot } from "@angular/router";
-import { UserService } from "../../service/user.service";
+import { UserService } from "../service/user.service";
 
 
 export const loginGuard : CanActivateFn = (route : ActivatedRouteSnapshot, state:RouterStateSnapshot) => {
@@ -10,7 +10,7 @@ export const loginGuard : CanActivateFn = (route : ActivatedRouteSnapshot, state
 
 
   //유저가 있으면 메인으로 보냄
-  if(userService.hasUser()){
+  if(userService.isLoggedin()){
     router.navigate(['./main'], { relativeTo : activateRoute.root});
   }
 

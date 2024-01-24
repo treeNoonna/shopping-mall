@@ -16,13 +16,4 @@
 <!--
 <input type="text" [formControl]="copy">
  -->
- <form [formGroup]="formGroup">
-  <div formArrayName="inputs">
-    <div *ngFor="let input of inputs.controls; let i = index">
-      <input [formControlName]="i" type="text">
-    </div>
-  </div>
-</form>
-
-<button (click)="addInput()">Add</button>
 

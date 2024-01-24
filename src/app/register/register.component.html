@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<!--input이 하나라도 있으면 formGroup에 넣음 / 아니면 formControl-->
+<form [formGroup]="registerFormGroup" (ngSubmit)="submit($event)">
+  <label for="email">E-mail : </label>
+  <input id="email" type="text" formControlName="email">
+  <br/><br>
+  <label for="password">password :</label>
+  <input id="password" type="password" formControlName="password">
+
+  <br/><br/>
+  <label for="password">password confirm:</label>
+  <input id="password" type="password" formControlName="passwordConfirm">
+
+  <br/>  <br/>
+  <button id="submit" type="submit">SUBMIT</button>
+
+</form>

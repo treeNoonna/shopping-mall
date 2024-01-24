@@ -1,1 +1,18 @@
+
+<a [routerLink]="['./']" routerLinkActive="router-link-active">Back</a>
+<ul>
+  <li>
+    <a [routerLink]="['./history']" routerLinkActive="router-link-active">HISTORY</a>
+    </li>
+  <li>
+    <a [routerLink]="['./edit']" routerLinkActive="router-link-active">PROFILE EDIT</a>
+    </li>
+  <li>
+    <a [routerLink]="['./qna']" routerLinkActive="router-link-active">QNA</a>
+    </li>
+  <li>
+    <button (click)="logout($event)">LOG OUT</button>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>

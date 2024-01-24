@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { UserService } from '../../../../service/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +11,21 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent  {
 
   activateRoute = inject(ActivatedRoute);
+  userService = inject(UserService);
+  router = inject(Router);
 
-  ngOnInit(): void {
-      console.log(this.activateRoute.snapshot);
+
+  logout(e:MouseEvent){
+/*     e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation(); */
+
+    console.log(e,'tree');
+    this.userService.logout();
+    this.router.navigate(['./login']);
   }
 
 }

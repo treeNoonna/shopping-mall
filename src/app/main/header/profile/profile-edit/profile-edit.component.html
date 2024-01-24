@@ -1,0 +1,12 @@
+<label for="password">password :</label>
+<input id="password" type="password" [formControl]="password"><br/>
+
+<label for="newPassword">new password :</label>
+<input id="newPassword" type="password" [formControl]="newPassword"><br/>
+
+<label for="newPasswordConfirm">new password confirm:</label>
+<input id="newPasswordConfirm" type="password" [formControl]="newPasswordConfirm">
+
+
+<p *ngIf="!isValid">INVALID</p>
+<button (click)="submit()">Submit</button>

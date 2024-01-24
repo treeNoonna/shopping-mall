@@ -7,17 +7,21 @@ import { UserModel } from "../model/user.model";
 
 export class UserService {
 
-  user! : UserModel;
+  user! : UserModel | undefined;
 
-  setUser(email:string){
-    sessionStorage.setItem('user', email); //창 닫으면 없어짐
+  setUser(email:string, password:string){
+    //sessionStorage.setItem(email); //창 닫으면 없어짐
 /*     localStorage.setItem('user',email); */
     this.user = {
-      email
+      email,password
     }
   };
 
-  hasUser() : boolean {
+  isLoggedin() : boolean {
     return this.user?.email ? true : false;
+  }
+
+  logout() {
+    this.user = undefined;
   }
 }
