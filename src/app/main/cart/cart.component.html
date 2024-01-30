@@ -1,0 +1,19 @@
+<table>
+  <thead>
+  <th>IMAGE</th>
+  <th>TITLE</th>
+  <th>PRICE</th>
+  <th>QUANTITY</th>
+</thead>
+
+
+<ng-container *ngFor="let product of cartList">
+  <tbody>
+  <tr>
+    <td><img [src]="product.image" width="200px"></td>
+    <td>{{ product.title }} </td>
+    <td>{{ product.price }} </td>
+    <td>{{ product.quantity }} </td>
+  </tr>
+  <tbody>
+</ng-container>

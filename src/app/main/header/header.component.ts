@@ -14,4 +14,5 @@ import { UserService } from '../../../service/user.service';
 export class HeaderComponent {
   userService = inject(UserService);
   isLoggedIn = this.userService.isLoggedin(); //javascript는 false가 아니면 다 true이다.
+
 }

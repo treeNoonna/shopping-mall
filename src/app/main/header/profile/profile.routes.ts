@@ -6,10 +6,10 @@ import { ProfileComponent } from './profile.component';
 
 
 export const profileRoutes: Routes = [
-  { path : '', component: ProfileComponent, children: [
-  { path : '', redirectTo: 'history', pathMatch:'full'},
-  { path : 'edit', component : ProfileEditComponent },
-  { path : 'qna', component : ProfileQnaComponent },
-  { path : 'history', component : ProfileHistoryComponent }
-]}
+  {path: '', component: ProfileComponent, children: [
+    {path: '', redirectTo: 'history', pathMatch: 'full'},
+    {path: 'edit', component: ProfileEditComponent},
+    {path: 'qna', component: ProfileQnaComponent},
+    {path: 'history', component: ProfileHistoryComponent},
+  ]}
 ];

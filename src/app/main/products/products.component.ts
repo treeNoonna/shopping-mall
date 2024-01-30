@@ -16,11 +16,11 @@ import { ProductModel } from '../../../model/product.model';
 export class ProductsComponent implements OnInit {
 
   productService = inject(ProductService);
-  productList$ = this.productService.getProducts();
+  productList$ = this.productService.products$;
   router = inject(Router);
 
   ngOnInit(): void {
-    this.productService.getProducts().pipe(
+    this.productService.products$.pipe(
       first(),
       tap((res)=> console.log('productsss',res))
     ).subscribe();

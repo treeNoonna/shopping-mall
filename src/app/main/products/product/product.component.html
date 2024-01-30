@@ -1,3 +1,16 @@
+<button (click)="addToCart()">Add to cart</button>
+<button (click)="checkout()">Check out</button>
+
+  <ul>
+  <li><img [src]="product.image" width="300px"></li>
+  <li>{{product.title}}</li>
+  <li>{{product.price}}</li>
+  <li *ngIf="product.description"><img width="300px"[src]="product.description"></li>
+</ul>
+
+
+
+
 
 <router-outlet></router-outlet>
-product
+

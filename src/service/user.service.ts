@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { UserModel } from "../model/user.model";
+import { Observable, of } from "rxjs";
 
 @Injectable({
   providedIn :'root'
@@ -17,10 +18,10 @@ export class UserService {
     }
   };
 
-  isLoggedin() : boolean {
-    return this.user?.email ? true : false;
+  isLoggedin(): boolean {
+    console.log(this.user,'userrrr');
+    return this.user?.email ? true: false;
   }
-
   logout() {
     this.user = undefined;
   }

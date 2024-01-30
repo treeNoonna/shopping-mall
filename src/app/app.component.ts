@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../service/user.service';
-import { NgIf } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports:[ RouterModule, NgIf]
+  imports:[ RouterModule, NgIf, AsyncPipe]
 })
 export class AppComponent {
   title = 'shopping-mall';

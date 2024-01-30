@@ -1,11 +1,6 @@
-
-<a *ngIf="!isLoggedIn" [routerLink]="['/login']" routerLinkActive="router-link-active">SIGN IN</a>
-<br/>
-<a *ngIf="!isLoggedIn" [routerLink]="['/register']" routerLinkActive="router-link-active">SIGN UP</a>
-<br/>
-<a *ngIf="isLoggedIn"  [routerLink]="['/main/profile']" routerLinkActive="router-link-active">PROFILE</a>
-<br/>
-<a *ngIf="isLoggedIn"  [routerLink]="['/main/cart']" routerLinkActive="router-link-active">CART</a>
-<br/>
+<a *ngIf="!isLoggedIn" [routerLink]="['/login']" routerLinkActive="router-link-active">Sign In</a><br/>
+<a *ngIf="!isLoggedIn" [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up</a>
+<a *ngIf="isLoggedIn" [routerLink]="['/main/profile']" routerLinkActive="router-link-active">Profile</a><br/>
+<a *ngIf="isLoggedIn" [routerLink]="['/main/cart']" routerLinkActive="router-link-active">Cart</a>
 <br/>
 <br/>
